@@ -5,6 +5,7 @@ tags:
   - calculus
   - gradient-descent
 created: 2026-10-18
+status: completed
 studied: 2026-09-23
 ---
 
@@ -18,7 +19,7 @@ studied: 2026-09-23
 
 ## 1. From a derivative to an update
 
-From [[1. Derivatives and Finite Differences]], we know:
+From [[01-derivatives]], we know:
 
 $$
 L(w)=(w-3)^2,\qquad \frac{dL}{dw}=2(w-3)
@@ -205,7 +206,7 @@ $$
 \frac{\partial L}{\partial b}=2(2w+b-5)
 $$
 
-The shortcut behind the factored form will make more sense after learning the chain rule in [[3. Chain Rule and Backpropagation]].
+The shortcut behind the factored form will make more sense after learning the chain rule in [[03-chain-rule-backpropagation]].
 
 ## 6. Our numerical exercise
 
@@ -309,6 +310,6 @@ Our actual result was:
 
 ## 9. What comes next
 
-We have used derivatives and updates, but neural networks involve **chains of operations**. Next, [[3. Chain Rule and Backpropagation]] shows how to propagate derivatives through intermediate values and calculate the gradients needed for training.
+We have used derivatives and updates, but neural networks involve **chains of operations**. Next, [[03-chain-rule-backpropagation]] shows how to propagate derivatives through intermediate values and calculate the gradients needed for training.
 
 After that, we can implement a forward pass, gradient calculation, and parameter updates in **plain Python**, before relying on PyTorch's automatic differentiation.

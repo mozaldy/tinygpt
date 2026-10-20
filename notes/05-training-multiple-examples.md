@@ -6,9 +6,31 @@ tags:
   - backpropagation
   - gradient-descent
 created: 2026-10-18
-status: ongoing
+status: completed
 ---
-# Exercise 1
+
+# Training with Multiple Examples
+
+> [!summary] Key idea
+> Mean squared error averages squared prediction errors, while the gradient averages signed error contributions across examples.
+
+$$
+L=\frac{1}{N}\sum_{i=1}^{N}(\hat y_i-y_i)^2
+$$
+
+$$
+\frac{\partial L}{\partial w}=\frac{2}{N}\sum_{i=1}^{N}(\hat y_i-y_i)x_i
+$$
+
+$$
+\frac{\partial L}{\partial b}=\frac{2}{N}\sum_{i=1}^{N}(\hat y_i-y_i)
+$$
+
+Notebook: [05-training-multiple-examples.ipynb](../notebooks/05-training-multiple-examples.ipynb).
+
+## Original worked exercises
+
+## Exercise 1
 
 Assume our model has:
 $$
@@ -54,11 +76,11 @@ $$
 $$
 \begin{aligned}
 \boxed{\text{MSE}=\frac{1}{n}\sum_{i=1}^{n}(\hat y_i-y_i)^2} \\\\
-MSE=\frac{1}{2}\cdot5 = \boxed{2,5}
+MSE=\frac{1}{2}\cdot5 = \boxed{2.5}
 \end{aligned}
 $$
 
-# Exercise 2: Gradients with Multiple Examples
+## Exercise 2: Gradients with Multiple Examples
 Our model is:
 
 $\hat y=wx+b$
@@ -137,7 +159,7 @@ $$\begin{aligned}
 &= \boxed{-3}
 \end{aligned}$$
 
-# Exercise 3: One Complete Gradient Descent Update
+## Exercise 3: One Complete Gradient Descent Update
 |Parameter|Value|
 |---|---|
 |Weight \(w\)|1|
@@ -202,10 +224,10 @@ L2 &= (4 - 3.3)^2\\
 
 MSE &= \frac{1}{2} \cdot (0.04 + 0.49) \\
 &= \frac{1}{2} \cdot 0.53 \\
-&= 0,265
+&= 0.265
 \end{aligned}
 $$
-# Exercise 4: Increasing the Learning Rate
+## Exercise 4: Increasing the Learning Rate
 
 Suppose we start again with:
 

@@ -5,6 +5,7 @@ tags:
   - calculus
   - backpropagation
 created: 2026-10-17
+status: completed
 ---
  
 # Chain Rule and Backpropagation
@@ -29,7 +30,7 @@ Think of this as tracing how a change in $x$ propagates through every operation 
 ## 2. Worked example: a chain of operations
 
 We will use $c$ for the second intermediate value. This keeps $b$ available later as the standard symbol for a **bias**.
-![[Pasted image 20261017120058.png]]
+![[assets/images/03-chain-rule/Pasted image 20261017120058.png]]
 $$
 \begin{aligned}
 x &= 2 \\
@@ -43,7 +44,7 @@ $$
 
 Calculate the intermediate values in order, starting from $x$ and ending at the loss $L$.
 
-![[mermaid-diagram.png]]
+![[assets/images/03-chain-rule/mermaid-diagram.png]]
 
 The **forward pass** computes the result of each operation and ultimately the loss.
 

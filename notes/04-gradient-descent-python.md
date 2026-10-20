@@ -15,7 +15,7 @@ status: completed
 > A neural network training step consists of a **forward pass** (compute the output and loss), **backpropagation** (compute parameter gradients), and an **optimizer step** (update parameters using those gradients). We can implement this entire process in plain Python, without PyTorch or automatic differentiation. Repeating the steps lets us observe convergence, oscillation, and divergence.
 
 > [!info] Where this note comes from
-> Based on my Stage 4 exercises and the code in [gradient_descent.ipynb](../gradient_descent.ipynb). The notebook contains the executable experiments; this note records what they mean, expected results, mistakes corrected along the way, and the conclusions I should remember. Prerequisites: [[1. Derivatives and Finite Differences]], [[2. Gradient Descent and Partial Derivatives]], and [[3. Chain Rule and Backpropagation]].
+> Based on my Stage 4 exercises and the code in [gradient_descent.ipynb](../notebooks/04-gradient-descent.ipynb). The notebook contains the executable experiments; this note records what they mean, expected results, mistakes corrected along the way, and the conclusions I should remember. Prerequisites: [[01-derivatives]], [[02-gradient-descent]], and [[03-chain-rule-backpropagation]].
 
 ## 1. Our model and learning objective
 
@@ -99,7 +99,7 @@ Loss: 49.0
 
 ## 4. Backpropagation: calculate gradients
 
-We derived these gradients in [[3. Chain Rule and Backpropagation]]:
+We derived these gradients in [[03-chain-rule-backpropagation]]:
 
 $$
 \begin{aligned}
@@ -431,7 +431,7 @@ flowchart TD
 
 ## 13. What comes next
 
-**[[5. Training with Multiple Examples]]** — replace our zero-target loss with a loss against a real target:
+**[[05-training-multiple-examples]]** — replace our zero-target loss with a loss against a real target:
 
 $$
 L=(a-y)^2

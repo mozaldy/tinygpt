@@ -5,6 +5,7 @@ tags:
   - calculus
   - derivatives
 created: 2026-10-18
+status: completed
 studied: 2026-09-22
 ---
 
@@ -180,7 +181,7 @@ $$
 w_{\text{new}}=w-\eta\frac{dL}{dw}
 $$
 
-We will learn exactly why this works in [[2. Gradient Descent and Partial Derivatives]].
+We will learn exactly why this works in [[02-gradient-descent]].
 
 ## 7. Quick self-check (without looking at the answers)
 
@@ -192,4 +193,4 @@ We will learn exactly why this works in [[2. Gradient Descent and Partial Deriva
 
 ## 8. What comes next
 
-In [[2. Gradient Descent and Partial Derivatives]], use the derivative to **update a parameter**, explore the learning rate, and then extend the idea from one parameter to two: a weight and a bias.
+In [[02-gradient-descent]], use the derivative to **update a parameter**, explore the learning rate, and then extend the idea from one parameter to two: a weight and a bias.

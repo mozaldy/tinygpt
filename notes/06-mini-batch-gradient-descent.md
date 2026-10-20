@@ -6,9 +6,21 @@ tags:
   - backpropagation
   - gradient-descent
 created: 2026-10-20
-status: ongoing
+status: completed
 ---
-# Exercise 1: Mini-batch gradient descent
+
+# Mini-batch Gradient Descent
+
+> [!summary] Key idea
+> Update parameters after each mini-batch; keep those updated parameters for the next mini-batch. An epoch processes every training example once.
+
+For a batch of $m$ examples, calculate signed errors $\hat y_i-y_i$ for gradients and squared errors for MSE. Evaluate full-dataset loss after each epoch for consistent progress tracking.
+
+Notebook: [05-mini-batch-training.ipynb](../notebooks/05-mini-batch-training.ipynb).
+
+## Original worked exercises
+
+## Exercise 8 — First mini-batch
 
 Assume our model has:
 $$
@@ -71,8 +83,8 @@ w&=0,\quad b=0 \\\\
     $$ \begin{aligned}
 
 
-L_1 &= (0 - 2)^2 = -2^2 = 4\\
-L_2 &= (0 - 4)^2 = -4^2 = 16\\\\
+L_1 &= (0 - 2)^2 = (-2)^2 = 4\\
+L_2 &= (0 - 4)^2 = (-4)^2 = 16\\\\
 L&=\frac{1}{N}\sum_{i=1}^{N}(\hat{y}_i-y_i)^2 \\\\
  &= \frac{1}{2} \cdot (4 + 16)\\
 &= \frac{1}{2} \cdot20=\boxed{10}
@@ -182,6 +194,10 @@ b_{new} &= b-\eta\cdot\frac{\partial{L}}{\partial{b}}\\
 &=  0.795\\
 \end{aligned}$$
 
+## Exercise 9 — Python mini-batch implementation
+
+Implemented in [05-mini-batch-training.ipynb](../notebooks/05-mini-batch-training.ipynb): two updates per epoch, ten epochs, and full-dataset MSE evaluated after each epoch.
+
 ## Exercise 10 — Final Stage 5 Challenge
 
 This is your final understanding check before we move to Stage 6.
@@ -212,7 +228,8 @@ no, because you can't really compare the mse of the first 2 dataset to the last 
 Currently, our training loop processes the dataset in this order:
 
 ```
-X = [1, 2, 3, 4]Y = [2, 4, 6, 8]
+X = [1, 2, 3, 4]
+Y = [2, 4, 6, 8]
 ```
 
 Suppose we shuffle the examples, preserving each input-target pair, before every epoch.
@@ -254,10 +271,10 @@ w&=0,\quad b=0 \\\\
     $$ \begin{aligned}
 
 
-L_1 &= (0 - 2)^2 = -2^2 = 4\\
-L_2 &= (0 - 4)^2 = -4^2 = 16\\
-L_3 &= (0 - 6)^2 = -6^2 = 36\\
-L_4 &= (0 - 8)^2 = -8^2 = 64\\
+L_1 &= (0 - 2)^2 = (-2)^2 = 4\\
+L_2 &= (0 - 4)^2 = (-4)^2 = 16\\
+L_3 &= (0 - 6)^2 = (-6)^2 = 36\\
+L_4 &= (0 - 8)^2 = (-8)^2 = 64\\
 L&=\frac{1}{N}\sum_{i=1}^{N}(\hat{y}_i-y_i)^2 \\\\
 &= \frac{1}{4} \cdot (4 + 16 + 36 + 64)\\
 &= \frac{1}{4} \cdot120=\boxed{30}
@@ -288,7 +305,7 @@ w_{new} &= w - \eta\cdot \frac{\partial L}{\partial w} \\
 
 b_{new} &= b - \eta\cdot \frac{\partial L}{\partial b} \\
 &= 0 - 0.05\cdot-10\\
-&= 0 + 0.3\\
+&= 0 + 0.5\\
 &= \boxed{0.5} \\
 \end{aligned}$$
 
